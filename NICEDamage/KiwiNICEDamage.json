@@ -3,7 +3,7 @@
     "Name": "NICE Damage Flyouts",
     "Punchline": "Adds the message NICE to your damage flyout when you get a hit ending in 69.",
     "Description": "Adds the message NICE to your damage flyout when you get a hit ending in 69. No that's it for real.",
-    "InternalName": "NICEDamage",
+    "InternalName": "KiwiNICEDamage",
     "ApplicableVersion": "any",
     "AssemblyVersion": "Version",
     "RepoUrl": "https://github.com/ShiftyKiwi/NICEDamage",

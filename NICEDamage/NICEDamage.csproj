@@ -2,7 +2,7 @@
 <Project Sdk="Dalamud.NET.Sdk/14.0.1">
   <PropertyGroup>
     <Authors>athene</Authors>
-    <Version>1.0.0.3</Version>
+    <Version>1.0.0.4</Version>
     <Description>Adds the message NICE to your damage flyout when you get a hit ending in 69.</Description>
     <PackageProjectUrl>https://github.com/ShiftyKiwi/NICEDamage</PackageProjectUrl>
     <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
@@ -10,6 +10,7 @@
 
   <PropertyGroup>
     <TargetFramework>net10.0-windows7.0</TargetFramework>
+    <AssemblyName>KiwiNICEDamage</AssemblyName>
     <Platforms>x64</Platforms>
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
