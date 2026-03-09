@@ -1,12 +1,8 @@
-using Dalamud.Game.Command;
-using Dalamud.IoC;
-using Dalamud.Plugin;
-using System.IO;
 using Dalamud.Interface.Windowing;
 using Dalamud.Game.Gui.FlyText;
 using Dalamud.Game.Text.SeStringHandling;
-using Microsoft.VisualBasic;
 using System;
+using Dalamud.Plugin;
 using Dalamud.Plugin.Services;
 
 namespace NICEDamage
@@ -15,20 +11,16 @@ namespace NICEDamage
     {
         public string Name => "NICE Damage Flyouts";
 
-        private IDalamudPluginInterface PluginInterface { get; init; }
-        private IFlyTextGui FlyTextGUI { get; init; }
-        public WindowSystem WindowSystem = new("NICEDamage");
+        private readonly IFlyTextGui flyTextGui;
+        private readonly WindowSystem windowSystem = new("NICEDamage");
 
-        public NICEDamagePlugin(IDalamudPluginInterface pluginInterface, IFlyTextGui flyTextGui)
-
+        public NICEDamagePlugin(IFlyTextGui flyTextGui)
         {
-            this.PluginInterface = pluginInterface;
-            this.FlyTextGUI = flyTextGui;
-
-            FlyTextGUI.FlyTextCreated += FlyTextGUI_FlyTextCreated;
+            this.flyTextGui = flyTextGui;
+            this.flyTextGui.FlyTextCreated += this.OnFlyTextCreated;
         }
 
-        private void FlyTextGUI_FlyTextCreated(ref FlyTextKind kind, ref int val1, ref int val2, ref SeString text1, ref SeString text2, ref uint color, ref uint icon, ref uint damageTypeIcon, ref float yOffset, ref bool handled)
+        private void OnFlyTextCreated(ref FlyTextKind kind, ref int val1, ref int val2, ref SeString text1, ref SeString text2, ref uint color, ref uint icon, ref uint damageTypeIcon, ref float yOffset, ref bool handled)
         {
             switch (kind)
             {
@@ -44,25 +36,24 @@ namespace NICEDamage
                 case FlyTextKind.Resist:
                     break;
                 default:
+                    var amount = Math.Abs((long)val1);
+                    if (amount % 100000 == 42069)
                     {
-                        var valStr = Convert.ToString(val1);
-                        if (valStr.EndsWith("42069"))
-                        {
-                            text2.Append(" OMGOMGOMG NICE DUDE NIIIIIICE ");
-                        }
-                        else if (valStr.EndsWith("69"))
-                        {
-                            text2.Append(" NICE ");
-                        }
-                        break;
+                        text2.Append(" OMGOMGOMG NICE DUDE NIIIIIICE ");
                     }
+                    else if (amount % 100 == 69)
+                    {
+                        text2.Append(" NICE ");
+                    }
+
+                    break;
             }
         }
 
-
         public void Dispose()
         {
-            this.WindowSystem.RemoveAllWindows();
+            this.flyTextGui.FlyTextCreated -= this.OnFlyTextCreated;
+            this.windowSystem.RemoveAllWindows();
         }
     }
 }

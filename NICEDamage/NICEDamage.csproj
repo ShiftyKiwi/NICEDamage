@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Dalamud.NET.Sdk/14.0.1">
   <PropertyGroup>
-    <Authors></Authors>
-    <Company></Company>
-    <Version>1.0.0.2</Version>
+    <Authors>athene</Authors>
+    <Version>1.0.0.3</Version>
     <Description>Adds the message NICE to your damage flyout when you get a hit ending in 69.</Description>
-    <Copyright></Copyright>
-    <PackageProjectUrl>https://github.com/goatcorp/SamplePlugin</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/ShiftyKiwi/NICEDamage</PackageProjectUrl>
     <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
   </PropertyGroup>
 
