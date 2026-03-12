@@ -4,9 +4,9 @@
     "Name": "NICE Damage Flyouts",
     "Punchline": "Adds the message NICE to your damage flyout when you get a hit ending in 69.",
     "Description": "Adds the message NICE to your damage flyout when you get a hit ending in 69. No that's it for real.",
-    "Changelog": "Renamed the internal plugin ID to KiwiNICEDamage so the custom repo entry no longer collides with the official plugin listing.",
+    "Changelog": "Validated for FFXIV Patch 7.45 HotFixes on March 11, 2026.",
     "InternalName": "KiwiNICEDamage",
-    "AssemblyVersion": "1.0.0.4",
+    "AssemblyVersion": "1.0.0.5",
     "RepoUrl": "https://github.com/ShiftyKiwi/NICEDamage",
     "ApplicableVersion": "any",
     "Tags": [
@@ -29,6 +29,6 @@
     "DownloadLinkInstall": "https://github.com/ShiftyKiwi/NICEDamage/releases/latest/download/latest.zip",
     "DownloadLinkTesting": "https://github.com/ShiftyKiwi/NICEDamage/releases/latest/download/latest.zip",
     "DownloadLinkUpdate": "https://github.com/ShiftyKiwi/NICEDamage/releases/latest/download/latest.zip",
-    "LastUpdate": "1773083894"
+    "LastUpdate": "1773274690"
   }
 ]
